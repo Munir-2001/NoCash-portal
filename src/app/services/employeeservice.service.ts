@@ -35,6 +35,7 @@ export class EmployeeserviceService {
   public GetEmployees(): void {
     this.http.get<EmployeeModel[]>(this.apiUrl).pipe(
       map((data: any[]) => data.map((item: any) => ({
+        
         ID: item.ID,
         datetime: item.datetime,
         Editedtime: item.Editedtime,
