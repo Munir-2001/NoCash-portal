@@ -2,7 +2,7 @@ import { IonDatetime } from "@ionic/angular";
 
 export interface EmployeeModel {
   ID:number;
-  datetime:string;
+  createdOn:string;
   Editedtime:string;
   ModifiedBy:number;
   FirstName:string;

@@ -1,15 +1,11 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Employee Tab
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+
+<!-- //pure gpt -->
+
 <div class="navbar">
   <ion-content>
     <ion-fab vertical="top" horizontal="center" slot="fixed">
       <ion-fab-button>
-        <ion-icon name="add-circle-outline" (click)="AddEmployeeAPI()" ></ion-icon>
+        <ion-icon name="add-circle-outline" (click)="AddEmployeeAPI()"></ion-icon>
       </ion-fab-button>
     </ion-fab>
   </ion-content>
@@ -20,19 +16,22 @@
       </ion-fab-button>
     </ion-fab>
   </ion-content>
-
   <ion-content>
     <ion-fab vertical="top" horizontal="center" slot="fixed">
       <ion-fab-button>
-        <ion-icon name="remove-circle-outline" (click)="DeleteEmployeeAPI()" ></ion-icon>
+        <ion-icon name="remove-circle-outline" (click)="DeleteEmployeeAPI()"></ion-icon>
       </ion-fab-button>
     </ion-fab>
   </ion-content>
-
-
-
 </div>
 
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Employee Tab
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
@@ -40,50 +39,33 @@
       <ion-title size="large">Employee Tab</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <app-explore-container name="Tab 1 page">
-
-    <!-- <ion-content>
-      <ion-grid>
-        <ion-row>
-          <ion-col size="6" *ngFor="let var of EmployeeService.emp; index as position"> -->
-            <!-- <ion-img [src]="photo.webviewPath"></ion-img> -->
-          <!-- </ion-col>
-        </ion-row>
-      </ion-grid>
-    
-       ion-fab markup  
-    </ion-content> -->
-    <ion-content>
-      <ion-grid>
-        <ion-row>
-          <ion-col size="12">
-            <ion-grid>
-              <!-- Table Header -->
-              <ion-row>
-                <ion-col size="1"><strong>ID</strong></ion-col>
-                <ion-col size="2"><strong>First Name</strong></ion-col>
-                <ion-col size="2"><strong>Last Name</strong></ion-col>
-                <ion-col size="2"><strong>Title</strong></ion-col>
-                <ion-col size="2"><strong>Datetime</strong></ion-col>
-                <ion-col size="2"><strong>Edited Time</strong></ion-col>
-                <ion-col size="1"><strong>Modified By</strong></ion-col>
-              </ion-row>
-              <!-- Table Content -->
-              <ion-row *ngFor="let employee of EmployeeService.employeedetails">
-                <ion-col size="1">{{ employee.ID }}</ion-col>
-                <ion-col size="2">{{ employee.FirstName }}</ion-col>
-                <ion-col size="2">{{ employee.LastName }}</ion-col>
-                <ion-col size="2">{{ employee.Title }}</ion-col>
-                <ion-col size="2">{{ employee.datetime }}</ion-col>
-                <ion-col size="2">{{ employee.Editedtime }}</ion-col>
-                <ion-col size="1">{{ employee.ModifiedBy }}</ion-col>
-              </ion-row>
-            </ion-grid>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-content>
-    
-  </app-explore-container>
 </ion-content>
+
+  <ion-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="7">
+          <ion-grid>
+            <ion-row>
+              <ion-col size="1"><strong>ID</strong></ion-col>
+              <ion-col size="1"><strong>First Name</strong></ion-col>
+              <ion-col size="1"><strong>Last Name</strong></ion-col>
+              <ion-col size="2"><strong>Title</strong></ion-col>
+              <ion-col size="2"><strong>Created On</strong></ion-col>
+              <ion-col size="2"><strong>Edited On</strong></ion-col>
+              <ion-col size="1"><strong>Modified By</strong></ion-col>
+            </ion-row>
+            <ion-row *ngFor="let employee of items">
+              <ion-col size="1">{{ employee.ID }}</ion-col>
+              <ion-col size="1">{{ employee.FirstName }}</ion-col>
+              <ion-col size="1">{{ employee.LastName }}</ion-col>
+              <ion-col size="2">{{ employee.Title }}</ion-col>
+              <ion-col size="2">{{ employee.createdOn }}</ion-col>
+              <ion-col size="2">{{ employee.Editedtime }}</ion-col>
+              <ion-col size="1">{{ employee.ModifiedBy }}</ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
